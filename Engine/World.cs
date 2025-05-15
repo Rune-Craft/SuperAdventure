@@ -17,6 +17,7 @@ public static class World
     public const int ITEM_ID_SPIDER_FANG = 8;
     public const int ITEM_ID_SPIDER_SILK = 9;
     public const int ITEM_ID_ADVENTURER_PASS = 10;
+    public const int ITEM_ID_KNIGHTS_SWORD = 11;
 
     public const int MONSTER_ID_RAT = 1;
     public const int MONSTER_ID_SNAKE = 2;
@@ -24,6 +25,7 @@ public static class World
 
     public const int QUEST_ID_CLEAR_ALCHEMIST_GARDEN = 1;
     public const int QUEST_ID_CLEAR_FARMERS_FIELD = 2;
+    public const int QUEST_ID_KILL_GIANT_SPIDER = 3;
 
     public const int LOCATION_ID_HOME = 1;
     public const int LOCATION_ID_TOWN_SQUARE = 2;
@@ -45,7 +47,7 @@ public static class World
 
     private static void PopulateItems ()
     {
-        Items.Add(new Weapon(ITEM_ID_RUSTY_SWORD, "Rusty sword", "Rusty swords", 0, 7));
+        Items.Add(new Weapon(ITEM_ID_RUSTY_SWORD, "Rusty sword", "Rusty swords", 0, 5));
         Items.Add(new Item(ITEM_ID_RAT_TAIL, "Rat tail", "Rat tails"));
         Items.Add(new Item(ITEM_ID_PIECE_OF_FUR, "Piece of fur", "Pieces of fur"));
         Items.Add(new Item(ITEM_ID_SNAKE_FANG, "Snake fang", "Snake fangs"));
@@ -55,6 +57,7 @@ public static class World
         Items.Add(new Item(ITEM_ID_SPIDER_FANG, "Spider fang", "Spider fangs"));
         Items.Add(new Item(ITEM_ID_SPIDER_SILK, "Spider silk", "Spider silks"));
         Items.Add(new Item(ITEM_ID_ADVENTURER_PASS, "Adventurer pass", "Adventurer passes"));
+        Items.Add(new Weapon(ITEM_ID_KNIGHTS_SWORD, "Knight's sword", "Knight's swords", 10, 20));
     }
 
     private static void PopulateMonsters ()
@@ -98,8 +101,20 @@ public static class World
 
         clearFarmersField.RewardItem = ItemByID(ITEM_ID_ADVENTURER_PASS);
 
+        Quest killGiantSpider =
+            new Quest(
+                QUEST_ID_KILL_GIANT_SPIDER,
+                "Kill the giant spider",
+                "Kill the giant spider in the forest and bring back 1 spider fang. You will receive the knight's sword and 50 gold pieces.", 50, 50);
+
+        killGiantSpider.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_SPIDER_FANG), 1));
+
+        killGiantSpider.RewardItem = ItemByID(ITEM_ID_KNIGHTS_SWORD);
+
+
         Quests.Add(clearAlchemistGarden);
         Quests.Add(clearFarmersField);
+        Quests.Add(killGiantSpider);
     }
 
     private static void PopulateLocations ()
@@ -122,6 +137,7 @@ public static class World
         farmersField.MonsterLivingHere = MonsterByID(MONSTER_ID_SNAKE);
 
         Location guardPost = new Location(LOCATION_ID_GUARD_POST, "Guard post", "There is a large, tough-looking guard here.", ItemByID(ITEM_ID_ADVENTURER_PASS));
+        guardPost.QuestAvailableHere = QuestByID(QUEST_ID_KILL_GIANT_SPIDER);
 
         Location bridge = new Location(LOCATION_ID_BRIDGE, "Bridge", "A stone bridge crosses a wide river.");
 

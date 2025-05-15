@@ -124,7 +124,7 @@ partial class SuperAdventure
         // label5
         // 
         label5.AutoSize = true;
-        label5.Location = new Point(617, 531);
+        label5.Location = new Point(972, 531);
         label5.Name = "label5";
         label5.Size = new Size(76, 15);
         label5.TabIndex = 8;
@@ -133,7 +133,7 @@ partial class SuperAdventure
         // cboPotions
         // 
         cboPotions.FormattingEnabled = true;
-        cboPotions.Location = new Point(369, 593);
+        cboPotions.Location = new Point(723, 593);
         cboPotions.Name = "cboPotions";
         cboPotions.Size = new Size(121, 23);
         cboPotions.TabIndex = 9;
@@ -141,14 +141,14 @@ partial class SuperAdventure
         // cboWeapons
         // 
         cboWeapons.FormattingEnabled = true;
-        cboWeapons.Location = new Point(369, 559);
+        cboWeapons.Location = new Point(723, 559);
         cboWeapons.Name = "cboWeapons";
         cboWeapons.Size = new Size(121, 23);
         cboWeapons.TabIndex = 10;
         // 
         // btnUseWeapon
         // 
-        btnUseWeapon.Location = new Point(620, 559);
+        btnUseWeapon.Location = new Point(974, 559);
         btnUseWeapon.Name = "btnUseWeapon";
         btnUseWeapon.Size = new Size(75, 23);
         btnUseWeapon.TabIndex = 11;
@@ -158,7 +158,7 @@ partial class SuperAdventure
         // 
         // btnUsePotion
         // 
-        btnUsePotion.Location = new Point(620, 593);
+        btnUsePotion.Location = new Point(974, 593);
         btnUsePotion.Name = "btnUsePotion";
         btnUsePotion.Size = new Size(75, 23);
         btnUsePotion.TabIndex = 12;
@@ -168,7 +168,7 @@ partial class SuperAdventure
         // 
         // btnNorth
         // 
-        btnNorth.Location = new Point(493, 433);
+        btnNorth.Location = new Point(847, 433);
         btnNorth.Name = "btnNorth";
         btnNorth.Size = new Size(75, 23);
         btnNorth.TabIndex = 13;
@@ -178,7 +178,7 @@ partial class SuperAdventure
         // 
         // btnEast
         // 
-        btnEast.Location = new Point(573, 457);
+        btnEast.Location = new Point(927, 457);
         btnEast.Name = "btnEast";
         btnEast.Size = new Size(75, 23);
         btnEast.TabIndex = 14;
@@ -188,7 +188,7 @@ partial class SuperAdventure
         // 
         // btnWest
         // 
-        btnWest.Location = new Point(412, 457);
+        btnWest.Location = new Point(766, 457);
         btnWest.Name = "btnWest";
         btnWest.Size = new Size(75, 23);
         btnWest.TabIndex = 15;
@@ -198,7 +198,7 @@ partial class SuperAdventure
         // 
         // btnSouth
         // 
-        btnSouth.Location = new Point(493, 487);
+        btnSouth.Location = new Point(847, 487);
         btnSouth.Name = "btnSouth";
         btnSouth.Size = new Size(75, 23);
         btnSouth.TabIndex = 16;
@@ -208,7 +208,7 @@ partial class SuperAdventure
         // 
         // rtbLocation
         // 
-        rtbLocation.Location = new Point(347, 19);
+        rtbLocation.Location = new Point(697, 19);
         rtbLocation.Name = "rtbLocation";
         rtbLocation.ReadOnly = true;
         rtbLocation.Size = new Size(360, 105);
@@ -217,7 +217,7 @@ partial class SuperAdventure
         // 
         // rtbMessages
         // 
-        rtbMessages.Location = new Point(347, 130);
+        rtbMessages.Location = new Point(697, 130);
         rtbMessages.Name = "rtbMessages";
         rtbMessages.ReadOnly = true;
         rtbMessages.Size = new Size(360, 286);
@@ -261,7 +261,8 @@ partial class SuperAdventure
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(719, 651);
+        BackgroundImageLayout = ImageLayout.Stretch;
+        ClientSize = new Size(1096, 651);
         Controls.Add(dgvQuests);
         Controls.Add(dgvInventory);
         Controls.Add(rtbMessages);
@@ -285,6 +286,7 @@ partial class SuperAdventure
         Controls.Add(label1);
         Name = "SuperAdventure";
         Text = "My Game";
+        FormClosing += SuperAdventure_FormClosing;
         Load += SuperAdventure_Load;
         ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
         ((System.ComponentModel.ISupportInitialize)dgvQuests).EndInit();
