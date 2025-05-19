@@ -49,6 +49,7 @@ partial class SuperAdventure
         rtbMessages = new RichTextBox();
         dgvInventory = new DataGridView();
         dgvQuests = new DataGridView();
+        this.btnTrade = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
         ((System.ComponentModel.ISupportInitialize)dgvQuests).BeginInit();
         SuspendLayout();
@@ -223,7 +224,6 @@ partial class SuperAdventure
         rtbMessages.Size = new Size(360, 286);
         rtbMessages.TabIndex = 18;
         rtbMessages.Text = "";
-        rtbMessages.TextChanged += richTextBox2_TextChanged;
         // 
         // dgvInventory
         // 
@@ -256,6 +256,16 @@ partial class SuperAdventure
         dgvQuests.RowHeadersVisible = false;
         dgvQuests.Size = new Size(312, 189);
         dgvQuests.TabIndex = 20;
+        //
+        // btnTrade
+        //
+        this.btnTrade.Location = new System.Drawing.Point(493, 620);
+        this.btnTrade.Name = "btnTrade";
+        this.btnTrade.Size = new System.Drawing.Size(75, 23);
+        this.btnTrade.TabIndex = 21;
+        this.btnTrade.Text = "Trade";
+        this.btnTrade.UseVisualStyleBackColor = true;
+        this.btnTrade.Click += new System.EventHandler(this.btnTrade_Click);
         // 
         // SuperAdventure
         // 
@@ -263,6 +273,7 @@ partial class SuperAdventure
         AutoScaleMode = AutoScaleMode.Font;
         BackgroundImageLayout = ImageLayout.Stretch;
         ClientSize = new Size(1096, 651);
+        Controls.Add(btnTrade);
         Controls.Add(dgvQuests);
         Controls.Add(dgvInventory);
         Controls.Add(rtbMessages);
@@ -287,7 +298,6 @@ partial class SuperAdventure
         Name = "SuperAdventure";
         Text = "My Game";
         FormClosing += SuperAdventure_FormClosing;
-        Load += SuperAdventure_Load;
         ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
         ((System.ComponentModel.ISupportInitialize)dgvQuests).EndInit();
         ResumeLayout(false);
@@ -317,4 +327,5 @@ partial class SuperAdventure
     private RichTextBox rtbMessages;
     private DataGridView dgvInventory;
     private DataGridView dgvQuests;
+    private Button btnTrade;
 }

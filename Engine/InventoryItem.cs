@@ -23,18 +23,23 @@ public class InventoryItem : INotifyPropertyChanged
             OnPropertyChanged("Description");
         }
     }
-
+    public int ItemID
+    {
+        get { return Details.ID; }
+    }
+    public int Price
+    {
+        get { return Details.Price; }
+    }
     public string Description
     {
         get { return Quantity > 1 ? Details.NamePlural : Details.Name; }
     }
-
     public InventoryItem (Item details, int quantity)
     {
         Details = details;
         Quantity = quantity;
     }
-
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged (string name)
     {

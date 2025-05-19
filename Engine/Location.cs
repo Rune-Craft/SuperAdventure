@@ -15,4 +15,5 @@ public class Location (int id, string name, string description,
     public Location LocationToEast { get; set; }
     public Location LocationToSouth { get; set; }
     public Location LocationToWest { get; set; }
+    public Vendor VendorWorkingHere { get; set; }
 }
